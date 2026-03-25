@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Operacje na liczbie</title>
+</head>
+<body>
+
+<h2>Wyniki:</h2>
+<div id="wynik"></div>
+
+<script>
+let liczba;
+
+
+do {
+    liczba = prompt("Podaj liczbę całkowitą:");
+} while (liczba === null || liczba.trim() === "" || isNaN(liczba) || !Number.isInteger(Number(liczba)));
+
+liczba = Number(liczba);
+
+let wynik = `
+Wprowadzona liczba: ${liczba} <br>
+Liczba o znaku przeciwnym: ${-liczba} <br>
+Liczba powiększona o 15: ${liczba + 15} <br>
+Liczba powiększona o 0,5: ${liczba + 0.5} <br>
+Kwadrat liczby: ${liczba * liczba} <br>
+Dzielenie przez 2: ${liczba / 2} <br>
+Reszta z dzielenia przez 2: ${liczba % 2} <br>
+Liczba o jeden większa: ${liczba + 1} <br>
+Liczba o jeden mniejsza: ${liczba - 1} <br>
+Floor (liczba / 3): ${Math.floor(liczba / 3)} <br>
+Ceil (liczba / 3): ${Math.ceil(liczba / 3)} <br>
+Round (liczba / 3): ${Math.round(liczba / 3)} <br>
+Pierwiastek z liczby: ${Math.sqrt(liczba)} <br>
+Iloczyn z liczbą losową (0-50): ${liczba * Math.floor(Math.random() * 51)} <br>
+Wartość bezwzględna: ${Math.abs(liczba)} <br>
+`;
+
+document.getElementById("wynik").innerHTML = wynik;
+</script>
+
+</body>
+</html>
